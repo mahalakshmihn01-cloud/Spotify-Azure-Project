@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.loopinput",
+						"type": "Expression"
+					},
 					"isSequential": true,
 					"activities": [
 						{
@@ -157,6 +161,10 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
+								"expression": {
+									"value": "@greater(activity('Sql-to-Lake').output.dataread,0)",
+									"type": "Expression"
+								},
 								"ifFalseActivities": [
 									{
 										"name": "Delete1",
